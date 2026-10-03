@@ -5,9 +5,9 @@ description: "AutoMusic Player - Modern Local & Stream Music Player (QQ Music / 
 scene: "ui"
 render: "vue"
 api: "rust"
-front_port: 3020
-back_port: 8320
-media_root: "E:\\Music\\"
+front_port: 17830
+back_port: 17831
+media_root: ""
 icon: "music"
 title: "AutoMusic Player"
 title_zh: "极光音乐播放器"
@@ -17,5 +17,5 @@ theme: "dark"
 accent: "emerald"
 
 dep stylekit {
-    path: "../stylekit"
+    path: "vendor/stylekit"
 }

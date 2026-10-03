@@ -1,44 +1,28 @@
-# 020-music-player — AutoUI Modern Desktop Music Player
+# auto-music
 
-A modern desktop music player inspired by Spotify, QQ Music, NetEase Cloud Music, and Soda Music (汽水音乐), supporting full local music library indexing and streaming from `E:\Music\`.
+音乐播放器，使用 AutoLang / AutoUI 开发的独立应用。
 
-## Features
+本仓是首批产品源码基线；当前能力以导入版本为准，仓库描述中的产品方向不表示全部已实现。
 
-- **Modern 3-Column Layout**:
-  - **NavSidebar**: Brand logo, navigation tabs (Local Music, Stage, Playlists, Favorites), dynamic stats badge, and dark mode toggle.
-  - **Stage View**: Immersive vinyl turntable animation with realistic tonearm, 16-band animated audio spectrum equalizer, lyrics preview card, and Hi-Res / Lossless format badges.
-  - **Tracklist View**: Full local music table with search filter, format pills (All, FLAC, MP3, WAV), song metadata (title, artist, size, extension), play/shuffle action buttons, and scan refresh.
-  - **Queue Drawer**: Collapsible right-hand upcoming queue drawer showing queue count and instant song switching.
-  - **Bottom Player Bar**: Spotify/NetEase style 3-column sticky bar with track cover info, center transport controls (Shuffle, Prev, Play/Pause, Next, Repeat), interactive draggable seekbar with time stamps, volume control, and view/queue toggles.
-- **Local Audio Streaming & Media Service**:
-  - Automatically indexes local audio files from `media_root: "E:\\Music\\"` in `pac.at`.
-  - Supports FLAC, MP3, WAV, OGG, M4A, AAC.
-  - Automatic `Artist - Title` parsing from standard music filenames.
-  - HTTP 206 partial content byte-range streaming via `/api/media/stream/:id` served by the native backend.
-  - Controlled HTML5 `<video>` / audio element syncing seek position, volume, playback state, duration, and error reporting.
+## 运行
 
-## Running
+安装对应版本的 `auto` CLI 后，从本仓根执行：
 
-```bash
-# Run with Vue frontend (browser) + Rust media backend
-cd examples/ui/020-music-player
+```sh
 auto run
-
-# VM / Iced native window
 auto run -r vm
 ```
 
-## Architecture
+前端端口：`17830`。后端端口：`17831`。
 
-- `src/front/player_store.at`: Global reactive player store (state machine, library scan, playlist management, seek target, volume, repeat/shuffle modes, computed labels).
-- `src/front/nav_sidebar.at`: Left navigation sidebar with branding, views, and playlists.
-- `src/front/stage.at`: Immersive playback stage with spinning vinyl disc, tonearm, 16-bar spectrum analyzer, and lyrics card.
-- `src/front/tracklist.at`: Local music library table, instant search, format filter tags, and track rows.
-- `src/front/queue_drawer.at`: Upcoming play queue drawer with count indicator and track jump.
-- `src/front/controls.at`: Bottom 3-column playback controller with draggable progress bar and volume controls.
-- `src/front/viewport.at`: Invisible controlled media element binding playback events to the store.
-- `src/front/app.at`: Root layout combining sidebar, main stage/tracklist, queue drawer, and bottom controls.
+共享 StyleKit 已固定在 `vendor/stylekit`，无需相邻 auto-lang 示例目录。
 
-## Inspiration & Design Reference
+配置 `AUTO_MEDIA_ROOT` 指向自己的媒体目录；原始开发机路径已移除。真实视频播放还需要对应媒体运行库。
 
-QQ Music, NetEase Cloud Music (网易云音乐), Soda Music (汽水音乐), Spotify.
+## 来源与组合
+
+来源提交、路径与文件 hash 见 `SOURCE-IMPORT.json`。首次导入提交保留在 `source-sync` 分支；完整 v0.5 恢复后从该基线导入差异，再与产品开发线合并。
+
+AutoOS 通过 [`apps/020-music-player`](https://github.com/auto-stack/auto-os/tree/v0.6-dev/apps/020-music-player) submodule 固定本仓版本；教学 Demo 保留在来源仓。
+
+已有测试随源导入；端口与平台相关测试需要按本仓配置准备运行环境。安装/启动与双端完整功能验收是不同检查项。
