@@ -1,0 +1,94 @@
+{
+  "repository": "auto-music",
+  "date": "2026-10-03",
+  "sources": [
+    {
+      "repo": "auto-lang",
+      "commit": "17292c07e792e80d4e4da5495fc3fc2917e8aa1e",
+      "path": "examples/ui/020-music-player",
+      "primary": true,
+      "fileCount": 12,
+      "pacFields": {
+        "name": "music-player",
+        "version": "2.0.0",
+        "description": "AutoMusic Player - Modern Local & Stream Music Player (QQ Music / NetEase / Spotify / Soda Music style)",
+        "scene": "ui",
+        "render": "vue",
+        "api": "rust",
+        "front_port": "3020",
+        "back_port": "8320",
+        "media_root": "E:\\\\Music\\\\",
+        "icon": "music",
+        "title": "AutoMusic Player",
+        "title_zh": "极光音乐播放器",
+        "category": "media",
+        "desktop": "true",
+        "theme": "dark",
+        "accent": "emerald"
+      },
+      "files": [
+        {
+          "sourcePath": "examples/ui/020-music-player/README.md",
+          "path": "README.md",
+          "sha256": "bbdb2af203e898e9755e9765e28fc5b505577913b722fd6b7b2d4feba3cb693a"
+        },
+        {
+          "sourcePath": "examples/ui/020-music-player/pac.at",
+          "path": "pac.at",
+          "sha256": "175866f3c1e6fbe029733793880acdac32e991d452a49f4a10a2840f11c32362"
+        },
+        {
+          "sourcePath": "examples/ui/020-music-player/src/back/api.at",
+          "path": "src/back/api.at",
+          "sha256": "7b89c20dbfd50599c3d14bb495880831e249f48787c322f3982df3e635c10a06"
+        },
+        {
+          "sourcePath": "examples/ui/020-music-player/src/front/app.at",
+          "path": "src/front/app.at",
+          "sha256": "36d29090e96efd036de5438b9535bacdd0e805a593f1fb26a36a6412fd2343e2"
+        },
+        {
+          "sourcePath": "examples/ui/020-music-player/src/front/controls.at",
+          "path": "src/front/controls.at",
+          "sha256": "00447c96052d55200d9cdf63b9e9fafb17a6004f93e1b8a5aadb020525ae9952"
+        },
+        {
+          "sourcePath": "examples/ui/020-music-player/src/front/nav_sidebar.at",
+          "path": "src/front/nav_sidebar.at",
+          "sha256": "657b1721720a63c6bae3062caea95bdc48e0d4e77df5b232941c431de6a7d0ee"
+        },
+        {
+          "sourcePath": "examples/ui/020-music-player/src/front/player_store.at",
+          "path": "src/front/player_store.at",
+          "sha256": "ed6dbe0fe44a77c00b0b8190d3b78bc20160b1fffaf3109884bc380818252fb5"
+        },
+        {
+          "sourcePath": "examples/ui/020-music-player/src/front/queue_drawer.at",
+          "path": "src/front/queue_drawer.at",
+          "sha256": "3839fbbf5510f66e4bff83ae34d49c571a8e32589b587233dd6c642faf75e4c6"
+        },
+        {
+          "sourcePath": "examples/ui/020-music-player/src/front/stage.at",
+          "path": "src/front/stage.at",
+          "sha256": "bd726d1ecab8e1ea22c4f0c84eead2e3e26ca30ce75f6ebe5ce5a4779a249032"
+        },
+        {
+          "sourcePath": "examples/ui/020-music-player/src/front/tracklist.at",
+          "path": "src/front/tracklist.at",
+          "sha256": "355be0c3b2a1ae936848f60b76d1f27f8b54d44790561af0ccbf06f11e3c7067"
+        },
+        {
+          "sourcePath": "examples/ui/020-music-player/src/front/viewport.at",
+          "path": "src/front/viewport.at",
+          "sha256": "e6504407f6d8f0f42a11de28fdc7ed57194f5be3b90ff089443defcca6980267"
+        },
+        {
+          "sourcePath": "examples/ui/020-music-player/tests/test_020_vm.py",
+          "path": "tests/test_020_vm.py",
+          "sha256": "5d4476d52df9980af5d80db87c6083e802c51559ccf533a5b2a23d469c7335c8"
+        }
+      ]
+    }
+  ],
+  "note": "Exact committed source snapshots; packaging changes follow in a separate commit. References are not additional installed apps."
+}
