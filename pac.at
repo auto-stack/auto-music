@@ -13,9 +13,21 @@ title: "AutoMusic Player"
 title_zh: "极光音乐播放器"
 category: "media"
 desktop: "true"
-theme: "dark"
+# auto-os/PLAN-058 T-02：原显式 `theme: "dark"` 键退役 = **follow 宿主**
+# （宿主策略完整快照 > 本 design 默认 > legacy 回退；显式值会以 pac 优先级
+# 压过宿主跟随，两族×明暗需求下不声明）。原 dark 默认改由 app.at design
+# 派生腿承接（独立运行默认暗色不变，dark_mode toggle 语义不变）。
+# 品牌 accent（emerald）保留豁免。
+# `vendor/themes` 为 UI 管理渠道发布的**固定版本快照**（themes 0.2.0，内容
+# digest 9fa07742dc68aa5377ae06cb2d966386002063f184c515b6c5dddf8a6bef838e，
+# per-file sha256 与源包逐文件校验同律；不可二次编辑、非第二权威源）。
+# theme 键保持缺省 = follow 宿主。主合同反链见 README。
 accent: "emerald"
 
 dep stylekit {
     path: "vendor/stylekit"
+}
+
+dep themes {
+    path: "vendor/themes"
 }
